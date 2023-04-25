@@ -1,5 +1,5 @@
 // Add Module Import Here
-import chalk from 'chalk'; //Library I will use for color output
+import chalk from 'chalk';
 import randomColor from 'randomColor';
 
 const inputColor = process.argv[2];
