@@ -1,6 +1,6 @@
 // Add Module Import Here
 import chalk from 'chalk'; //Library I will use for color output
-import randomcolor from 'randomcolor';
+import randomColor from 'randomColor';
 
 const inputColor = process.argv[2];
 const inputLuminosity = process.argv[3];
@@ -20,12 +20,21 @@ function output(colorcode) {
 }
 
 if (inputColor && inputLuminosity) {
-  console.log(inputColor + ' ' + inputLuminosity);
+  const color = randomColor({
+    luminosity: `${inputLuminosity}`,
+    hue: `${inputColor}`,
+  });
+  output(color);
 } else if (inputColor) {
-  const convertColor = chroma(`${inputColor}`);
-  console.log(convertColor);
+  const color = randomColor({
+    count: 1,
+    hue: `${inputColor}`,
+  });
+  output(color[0]);
 } else {
-  const randomHexColor = chroma.random();
-  console.log(chroma.random());
-  //output(randomHexColor.color);
+  const color = randomColor({
+    luminosity: 'random',
+    hue: 'random',
+  });
+  output(color);
 }
