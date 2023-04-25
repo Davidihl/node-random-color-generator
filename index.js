@@ -7,7 +7,7 @@ const inputLuminosity = process.argv[3];
 
 function output(colorcode) {
   console.log(
-    chalk.hex(`${colorcode}`)(`###############################
+    chalk.hex(colorcode)(`###############################
 ###############################
 ###############################
 #####                     #####
@@ -21,14 +21,14 @@ function output(colorcode) {
 
 if (inputColor && inputLuminosity) {
   const color = randomColor({
-    luminosity: `${inputLuminosity}`,
-    hue: `${inputColor}`,
+    luminosity: inputLuminosity,
+    hue: inputColor,
   });
   output(color);
 } else if (inputColor) {
   const color = randomColor({
     count: 1,
-    hue: `${inputColor}`,
+    hue: inputColor,
   });
   output(color[0]);
 } else {
