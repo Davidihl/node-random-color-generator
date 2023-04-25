@@ -1,6 +1,6 @@
 // Add Module Import Here
 import chalk from 'chalk';
-import randomColor from 'randomColor';
+import randomColor from 'randomcolor';
 
 const inputColor = process.argv[2];
 const inputLuminosity = process.argv[3];
