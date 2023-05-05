@@ -19,22 +19,4 @@ function output(colorcode) {
   );
 }
 
-if (inputColor && inputLuminosity) {
-  const color = randomColor({
-    luminosity: inputLuminosity,
-    hue: inputColor,
-  });
-  output(color);
-} else if (inputColor) {
-  const color = randomColor({
-    count: 1,
-    hue: inputColor,
-  });
-  output(color[0]);
-} else {
-  const color = randomColor({
-    luminosity: 'random',
-    hue: 'random',
-  });
-  output(color);
-}
+output(randomColor({ hue: inputColor, luminosity: inputLuminosity }));
